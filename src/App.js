@@ -46,7 +46,7 @@ render(){
   return (
     <div className='container'>
       <div className='row'>
-       <div className='col-md-12'>
+       <div className='col-md-12 text-center'>
          <h1>React ToDo List</h1>
        <input
        className='form-control'
@@ -58,7 +58,7 @@ render(){
 
       <ul> 
 
-      {this.state.list.map((val)=><h2>{val}</h2>)}
+      {this.state.list.map((val)=><li><h2>{val}</h2></li>)}
 
       </ul>
        </div>

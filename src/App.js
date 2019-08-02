@@ -35,9 +35,16 @@ addToList(input){
   })
 }
 
-removeFromLIst(){
+removeFromList(){
+
+  let listArray = this.state.list;
+  let index = this.state.userInput;
+  
+  listArray.splice(index,1)
   
   this.setState({
+
+    list: listArray
     
   })
 }
@@ -54,11 +61,15 @@ render(){
       value={this.state.userInput}
       type='text'
       />
-      <button className='btn btn-success'onClick={()=>this.addToList(this.state.userInput)}>Add</button>
+      <button className='btn btn-primary'onClick={()=>this.addToList(this.state.userInput)}>Add</button>
 
       <ul> 
 
-      {this.state.list.map((val)=><li><h2>{val}</h2></li>)}
+      {this.state.list.map((val)=><div><li><h2>{val}</h2></li>
+      
+      <button className='btn btn-danger'onClick={()=>this.removeFromList()}>remove</button>
+      
+      </div>)}
 
       </ul>
        </div>
